@@ -1,13 +1,10 @@
-markdown: rdiscount
+markdown: redcarpet
 pygments: true
 permalink: /posts/:title
-auto: true
-rdiscount:
-  extensions: [smart]
 
-name: Zach Holman
-url: http://zachholman.com
-description: A fantastic blog that is fantastic.
-twitter: holman
-github: holman
-gravatar_url: http://gravatar.com/avatar/6f63cde8b16b035280ca615f621a6c8c
+name: Sasa Ivetic
+url: http://sivetic.github.io
+description: Sasa Ivetic
+twitter: sasaivetic
+github: sivetic
+gravatar_url: http://s.gravatar.com/avatar/57ea4c500d1fce1427b004558d988cc0

@@ -102,7 +102,7 @@ a {
     padding-bottom: 5px;
     margin-bottom: 10px; }
   .content p {
-    font-size: 16px;
+    font-size: 18px;
     margin-top: 0;
     margin-bottom: 1.2em;
     line-height: 1.7em; }
@@ -150,17 +150,17 @@ a {
     padding: 14px;
     font-size: 14px;
     margin: 5px 0 15px 0;
-    font-family: Helvetica, sans-serif;
+    font-family: "Palatino Linotype", Helvetica, sans-serif;
     line-height: 1.6em; }
   .content .listing {
     margin: 10px 0 0 0;
     padding: 0;
-    font-family: Helvetica, sans-serif; }
+    font-family: "Palatino Linotype", Helvetica, sans-serif; }
     .content .listing ul {
       margin: 0;
       padding: 0; }
     .content .listing li {
-      font-size: 13px;
+      font-size: 18px;
       list-style: none;
       padding: 5px 3px;
       margin: 0;
@@ -175,7 +175,7 @@ a {
   .content .meta {
     margin: 30px 0;
     padding: 10px 0;
-    font-family: Helvetica, sans-serif; }
+    font-family: "Palatino Linotype", Helvetica, sans-serif; }
     .content .meta p {
       line-height: 1.4;
       font-size: 14px;
