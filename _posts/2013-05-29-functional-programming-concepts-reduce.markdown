@@ -44,7 +44,7 @@ Now let's assume that our program calls for computing the product of a list.  On
 
 ```js
 function product(list) {
-	var prod = 0;
+	var prod = 1;
 	for (var i=0; i<list.length; i++) {
 		prod *= list[i];
 	}
