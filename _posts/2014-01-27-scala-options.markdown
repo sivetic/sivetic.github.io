@@ -112,7 +112,7 @@ if (o.isDefined)
 
 Occasionally we need to combine several methods, each of which returns an option, to return a result.  Database and web service access will often need to make combine results from multiple method calls that return options.  Generally speaking, we do not want to return a nested Option; instead we want to flatten the results to a single `Option[A]` value.  Here is an example of how we can combine options using `Option.flatMap`:
 
-```
+```scala
 // Database accessor methods that return user's data
 def getUserById(id: Long): Option[User] = {...}
 def getBusinessByUserId(userId: Long): Option[Business] = {...}
