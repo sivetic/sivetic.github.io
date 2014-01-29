@@ -19,26 +19,26 @@ When you first start using `Option`, it is really tempting to make use of `Opion
 
 The easiest way to create an `Option` is to use the `apply` method in the `Option` companion object.
 
-```
+```scala
 val option1 = Option("Foobar")
 ```
 
 You can also define a value that is empty, or `None`:
 
-```
+```scala
 val option2 = None
 ```
 
 Options come in very handy when interacting with libraries that rely on null values:
 
-```
+```scala
 val input = null
 val option3 = Option(null) // option3 will be None
 ```
 
 *Important Note*: You can also create an instance of the `Some` class by wrapping values with `Some()`.  Unlike `Option.apply` however, `Some.apply` will wrap the null value instead of returning an instance of `None`, so be especially careful when using `Some.apply`:
 
-```
+```scala
 val option4: Option[String] = Some(null) // option4 is an instance of Some[String] with value set to null
 val option5: Option[String] = Option(null) // option5 is an instance of None
 ```
@@ -50,7 +50,7 @@ val option5: Option[String] = Option(null) // option5 is an instance of None
 
 Use `Option.map` to transform a value where the transformation function returns a value *not* wrapped in an `Option`:
 
-```
+```scala
 def toUpper(s: String) = s.toUpperCase
 
 val result = None.map(toUpper) // Returns None
@@ -60,7 +60,7 @@ val result = Option("12345").map(_.length) // Returns Some(5)
 
 The equivalent of above code using `match` instead:
 
-```
+```scala
 def toUpper(s: String) = s.toUpperCase
 
 val result = Option("foo") match {
@@ -71,7 +71,7 @@ val result = Option("foo") match {
 
 And for fun, an equivalent without using functional programming concents:
 
-```
+```scala
 def toUpper(s: String) = s.toUpperCase
 val foo = Some("foo")
 
@@ -87,7 +87,7 @@ val result =
 
 Sometimes we want to apply a method to the option's value, such as print the option's value, or perform a unit of work.  In such cases, where we do not care about the value returned from our method (i.e. we do not want to transform the option's value), we use `Option.foreach`:
 
-```
+```scala
 def log(msg: String): Unit = println(s"Message Length: ${msg.length}")
 Option("I am a log statement").foreach(log) // Prints "Message Length: 20")
 None.foreach(log) // Does nothing
@@ -97,7 +97,7 @@ Option("Another Example").foreach(println) // Prints "Another Example"
 
 Above code can also be rewritten in a more verbose mode, though use of `foreach` is encouraged due to brewity:
 
-```
+```scala
 Option("I am a log statement") match {
 	case Some(s) => log(s)
 	case None =>
@@ -133,7 +133,7 @@ In the above example, we will return the employee count if and only if we've suc
 
 Deep nesting issues become immediately apparent with above code as soon as we start combining results from more than a couple methods.  Thankfully, Scala has a convenient way of combining options using the `for-yield` construct.  `for-yield` comprehensions are only syntactic sugar - they get compiled to a standard map/flatMap expression.  However they hide a lot of ugly code for us, so its usability is immediatley apparent:
 
-```
+```scala
 val businessDetails: Option[(String, Int)] = for {
 	user <- getUserById(id)
 	business <- getBusinessByUserId(user.userId)
@@ -150,7 +150,7 @@ Once again, if any one of the three calls returns `None`, `businessDetails` will
 
 If you ever end up with nested options in form of `Option(Option[A])`, calling `flatten` will return the inner option or `None` if the inner option is also `None`:
 
-```
+```scala
 val o1 = Option("foo")
 val o2 = None
 val o3 = Option(o1) // Option(Option("foo"))
@@ -162,7 +162,7 @@ val o6 = o4.flatten // None
 
 `Option.flatten` can also be written using `match`:
 
-```
+```scala
 Option(Option("foo")) match {
 	case Some(x) => x
 	case None => None
@@ -175,7 +175,7 @@ Option(Option("foo")) match {
 `Option.isEmpty` returns true if option value is not defiend (i.e. if it is `None`), false otherwise
 `Option.isDefined` returns true if the option value is defined, false otherwise 
 
-```
+```scala
 Option("foo").isEmpty // false
 None.isEmpty // true
 Option("foo").isDefined // true
@@ -184,7 +184,7 @@ None.isDefined // false
 
 Once again, the equivalent written using `match`:
 
-```
+```scala
 // Option.isEmpty
 Option("foo") match {
 	case Some(_) => false
@@ -209,7 +209,7 @@ Sometimes we want to retrieve the option value instead of applying a transformat
 
 Examples:
 
-```
+```scala
 val full: Option[String] = Option("Glass is full")
 val empty: Option[String] = None
 
