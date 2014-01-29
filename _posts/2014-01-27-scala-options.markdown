@@ -202,10 +202,10 @@ Option("foo") match {
 
 Sometimes we want to retrieve the option value instead of applying a transformation function to the value.  In such cases, we can use one of several methods:
 
-	- `Option.getOrElse` returns option's value if present, the supplied default otherwise. Note that the supplied default can either be a value, or a method returning a value.
-	- `Option.orElse` returns the same option if nonempty, or the supplied default option otherwise.  As with getOrElse, the default can be a method.  Unlike getOrElse, orElse will return an `Option[A]`
-	- `Option.orNull` returns the option value if nonempty, null otherwise.  `orNull` is useful when interacting with 3rd party libraries that expect `null` values, otherwise should be avoided in idiomatic Scala code.
-	- 'Option.get' returns the option value if nonempty, throws NoSuchElementException otherwise.  Use of `Option.get` is highly discouraged in idiomatic Scala.
+- `Option.getOrElse` returns option's value if present, the supplied default otherwise. Note that the supplied default can either be a value, or a method returning a value.
+- `Option.orElse` returns the same option if nonempty, or the supplied default option otherwise.  As with getOrElse, the default can be a method.  Unlike getOrElse, orElse will return an `Option[A]`
+- `Option.orNull` returns the option value if nonempty, null otherwise.  `orNull` is useful when interacting with 3rd party libraries that expect `null` values, otherwise should be avoided in idiomatic Scala code.
+- 'Option.get' returns the option value if nonempty, throws NoSuchElementException otherwise.  Use of `Option.get` is highly discouraged in idiomatic Scala.
 
 Examples:
 
